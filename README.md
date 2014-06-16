@@ -1,5 +1,5 @@
 
-zr-graph 是一个web应用, 可以在线查看和简单编辑常见的图文件（目前只支持 [gexf](http://gexf.net/format/) 和 [gdf](https://gephi.org/users/supported-graph-formats/gdf-format/) )，使用力导向算法进行布局，导出成 [gexf](https://gephi.org/users/supported-graph-formats/gdf-format/) 文件。
+zr-graph 是一个类似 gephi 的 web 应用, 可以在线查看和简单编辑常见的图文件（目前只支持 [gexf](http://gexf.net/format/) 和 [gdf](https://gephi.org/users/supported-graph-formats/gdf-format/) )，使用力导向算法进行布局，导出成 [gexf](https://gephi.org/users/supported-graph-formats/gdf-format/) 文件。
 
 #### [Try it](http://zr-graph.qiniudn.com)
 
@@ -10,7 +10,7 @@ zr-graph 是一个web应用, 可以在线查看和简单编辑常见的图文件
 zr-graph 中使用了 [ForceAtla2](http://webatlas.fr/tempshare/ForceAtlas2_Paper.pdf) 作为布局算法，你可以在 zr-graph 界面中尝试该布局算法，也可以引用 js 文件在自己的项目中独立使用。
 
 
-##### 使用实例
+##### 使用示例
 
 参考 `static/tests/force_worker.html` 的代码
 
@@ -52,7 +52,6 @@ forceAtlas2.addNode({
 跟添加节点类似
 
 ```javascript
-
 // 你可以使用 ForceAtlas2.Edge 创建边
 forceAtlas2.addEdge(new ForceAtlas2.Edge(sNode, tNode));
 
@@ -61,7 +60,6 @@ forceAtlas2.addEdge({
     source: sNode,
     target: tNode
 });
-
 ```
 
 + 初始化
@@ -69,9 +67,7 @@ forceAtlas2.addEdge({
 初始化会创建一个 worker 并把顶点和边的初始数据传到 worker 中
 
 ```javascript
-
 forceAtlas2.init();
-
 ```
 
 + 更新以及更新回调
