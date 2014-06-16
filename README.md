@@ -1,5 +1,5 @@
 
-zr-graph 是一个类似 gephi 的 web 应用, 可以在线查看和简单编辑常见的图文件（目前只支持 [gexf](http://gexf.net/format/) 和 [gdf](https://gephi.org/users/supported-graph-formats/gdf-format/) )，使用力导向算法进行布局，导出成 [gexf](https://gephi.org/users/supported-graph-formats/gdf-format/) 文件。
+zr-graph 是一个类似 [gephi](https://gephi.org) 的 web 应用, 可以在线查看和简单编辑常见的图文件（目前只支持 [gexf](http://gexf.net/format/) 和 [gdf](https://gephi.org/users/supported-graph-formats/gdf-format/) )，使用力导向算法进行布局，导出成 [gexf](https://gephi.org/users/supported-graph-formats/gdf-format/) 文件。
 
 #### [Try it](http://zr-graph.qiniudn.com)
 
@@ -16,21 +16,21 @@ zr-graph 中使用了 [ForceAtla2](http://webatlas.fr/tempshare/ForceAtlas2_Pape
 
 ##### 引用代码
 
-ForceAtlas2 的源文件是 `static/lib/` 目录下的 `ForctAtlas2.js` 和 `ForceAtlas2_worker.js`, `ForceAtlas2.js` 是你需要引用的文件，`ForceAtlas2_worker.js`是布局算法主要的代码，顾名思义这段代码是通过 WebWorker 在另一个进程中执行的，但是无需关心这个，只要跟 `ForceAtlas2.js` 放在同个目录下就行了。
+ForceAtlas2 的源文件是 `static/lib/` 目录下的 `ForctAtlas2.js` 和 `ForceAtlas2_worker.js`, `ForceAtlas2.js` 是需要引用的文件，`ForceAtlas2_worker.js`是布局算法主要的代码，顾名思义这段代码是通过 WebWorker 在另一个进程中执行的，但是无需关心这个，只要跟 `ForceAtlas2.js` 放在同个目录下就行了。
 
 ##### 使用代码
 
-+ 创建 ForceAtlas2 实例
++ **创建 ForceAtlas2 实例**
 
 ```javascript
 var forceAtlas2 = new ForceAtlas2();
 ```
 
-+ 添加节点
++ **添加节点**
 
 ```javascript
 
-// 你可以使用 ForceAtlas2.Node 创建节点
+// 可以使用 ForceAtlas2.Node 创建节点
 var position = new Float32Array([10, 10]);
 forceAtlas2.addNode(new ForceAtlas2.Node("", position));
 
@@ -47,12 +47,12 @@ forceAtlas2.addNode({
 
 其中 `id`, `mass`, `size` 属性都是可选的
 
-+ 添加边
++ **添加边**
 
 跟添加节点类似
 
 ```javascript
-// 你可以使用 ForceAtlas2.Edge 创建边
+// 可以使用 ForceAtlas2.Edge 创建边
 forceAtlas2.addEdge(new ForceAtlas2.Edge(sNode, tNode));
 
 // 也可以传入任意带有 source 和 target 属性的 object
@@ -62,7 +62,7 @@ forceAtlas2.addEdge({
 });
 ```
 
-+ 初始化
++ **初始化**
 
 初始化会创建一个 worker 并把顶点和边的初始数据传到 worker 中
 
@@ -70,7 +70,7 @@ forceAtlas2.addEdge({
 forceAtlas2.init();
 ```
 
-+ 更新以及更新回调
++ **更新以及更新回调**
 
 ```javascript
 forceAtlas.onupdate = function(nodes, edges) {
