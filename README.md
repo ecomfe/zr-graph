@@ -3,8 +3,7 @@ zr-graph 是一个web应用, 可以在线查看和简单编辑常见的图文件
 
 #### [Try it](http://zr-graph.qiniudn.com)
 
-[预览](http://pictures-shenyi.qiniudn.com/zr-graph/overview.jpg)
-
+<img src="http://pictures-shenyi.qiniudn.com/zr-graph/overview.jpg" width="700" />
 
 ### 独立使用 ForceAtlas2
 
